@@ -1,0 +1,17 @@
+.board {
+  background-color: rgb(244, 231, 252);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color:rgb(77, 76, 76);
+  flex-direction: column;
+}
+
+.logout-button {
+  font-size: 17px;
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -1,0 +1,58 @@
+<p class="form-header">Sign up</p>
+<form class="signup-form"  #signupForm="ngForm" appMatchingFields>
+  <div class="form-field">
+    <p class="form-field__label">Login</p>
+    <input
+      type="text"
+      class="form-field__input"
+      [(ngModel)]="user"
+      name="user"
+      #usernameField="ngModel"
+      required
+    >
+    <span
+      class="form-error"
+      [hidden]="!usernameField.errors?.required || !usernameField.touched"
+    >Field is required</span> 
+  </div>
+  <div class="form-field">
+    <p class="form-field__label">Password</p>
+    <input
+      type="password"
+      class="form-field__input"
+      [(ngModel)]="password"
+      name="password"
+      #passwordField="ngModel"
+      required
+    >
+    <span
+      class="form-error"
+      [hidden]="!passwordField.errors?.required || !passwordField.touched"
+    >Field is required</span> 
+    <span
+      class="form-error"
+      [hidden]="!signupForm.errors?.noMatch || (!passwordField.touched || !passwordRepeatField.touched)"
+    >Passwords don't match</span> 
+  </div>
+  <div class="form-field">
+    <p class="form-field__label">Repeat password</p>
+    <input
+      type="password"
+      class="form-field__input"
+      [(ngModel)]="passwordRepeat"
+      name="password-repeat"
+      #passwordRepeatField="ngModel"
+      required
+    >
+    <span
+      class="form-error"
+      [hidden]="!passwordRepeatField.errors?.required || !passwordRepeatField.touched"
+    >Field is required</span> 
+    <span
+      class="form-error"
+      [hidden]="!signupForm.errors?.noMatch|| (!passwordField.touched || !passwordRepeatField.touched)"
+    >Passwords don't match</span> 
+  </div>
+  <button class="form-submit" (click)="saveUser()">Sign up</button>
+  <p class="not-a-member">Already a member? <span class="form-redirect" (click)="switchToLogin()">Log in</span></p>
+</form>

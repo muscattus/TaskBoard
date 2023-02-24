@@ -1,0 +1,64 @@
+
+:host {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.form-header{
+  font-size: 20px;
+  text-align: center;
+}
+
+.signup-form {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+}
+.form-field {
+  &__label {
+    font-size: 15px;
+    margin: 13px 0 7px;
+  }
+  &__input {
+    outline: none;
+    width: 100%;
+    height: 35px;
+    font-size: 15px;
+    border: 1px solid #a49b94;
+    border-radius: 4px;
+    padding: 0 7px;
+    box-sizing: border-box;
+    &:focus {
+      border-color: #8d8580;
+    }
+  } 
+}
+
+.form-submit {
+  border: none;
+  outline: none;
+  background-color: #afd7df;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin: 10px auto;
+  font-family: "Montserrat";
+  &:hover {
+    background-color: #b1cad1;
+    cursor: pointer;
+  }
+}
+
+.form-redirect {
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  &:hover {
+    color: #8d8580;
+  }
+}
+
+.form-error {
+  font-size: smaller;
+  color: red;
+}

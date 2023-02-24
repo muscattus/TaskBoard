@@ -1,0 +1,16 @@
+<div class="start-page">
+  <div class="logo">
+    <img class="logo__icon" src="../../../../../assets/agile-board-icon-vector.webp">
+    <p class="logo__name">task board</p>
+  </div>
+
+  <div class="authorization"  >
+      <app-login-form *ngIf="isRegistered"
+        (goToSignup)="switchToSignup()"
+      ></app-login-form>
+      
+      <app-signup-form *ngIf="!isRegistered"
+        (goToLogin)="switchToLogin()"
+      ></app-signup-form>
+  </div>
+</div>
