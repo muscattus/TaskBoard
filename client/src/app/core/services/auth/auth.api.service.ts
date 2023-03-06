@@ -8,7 +8,9 @@ import { User, Credentials } from './auth.models';
 })
 export class AuthApiService {
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
   saveUser(user: Credentials): Observable<User> {
     return this.http.post<User>('/auth/signup', user); //todo: paths to constants
@@ -19,12 +21,6 @@ export class AuthApiService {
   }
 
   authMe(): Observable<User> {
-    // const headers = {
-    //   Authorization: `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImgtR3liR2g5eSIsImlhdCI6MTY3NjkzNzgyNywiZXhwIjoxNjc3MDI0MjI3fQ.EEnxq9Mtokkav9vMDQ5ekEzcGVvINBvMATQROHMzrwU`
-    // }
-    // const requestOptions = {            
-    //   headers: new HttpHeaders(headers), 
-    // };
     return this.http.get<User>('/auth/me');
   }
 }

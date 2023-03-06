@@ -10,8 +10,10 @@ import { User, Credentials } from './auth.models';
 })
 export class AuthService {
 
-  constructor(private apiService: AuthApiService,
-    private userService: UserService) { }
+  constructor(
+    private apiService: AuthApiService,
+    private userService: UserService
+  ) { }
 
   saveUser(user: Credentials): Observable<User> {
     return this.apiService.saveUser(user).pipe(

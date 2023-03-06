@@ -9,7 +9,10 @@ import { Route, Router } from '@angular/router';
   styleUrls: ['./board.component.scss']
 })
 export class BoardComponent {
-  constructor (private userService: UserService, private router: Router) {}
+  constructor (
+    private userService: UserService,
+    private router: Router
+  ) {}
 
   isLoggedIn = false;
   isLoggedIn$ = this.userService.getUserObservable().pipe(

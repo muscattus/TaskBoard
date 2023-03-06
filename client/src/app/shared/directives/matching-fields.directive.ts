@@ -7,8 +7,6 @@ import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@an
 })
 export class MatchingFieldsValidatorDirective implements Validator {
 
-  constructor() { }
-
   validate(control: AbstractControl): ValidationErrors | null {
     const password = control.get('password')?.value;
     const passwordRepeat = control.get('password-repeat')?.value;
@@ -19,4 +17,5 @@ export class MatchingFieldsValidatorDirective implements Validator {
         return null;
    }
   }
+
 }

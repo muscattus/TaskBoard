@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent {
 
-  constructor( private authService: AuthService, private router: Router) {}
   @Output() goToSignup = new EventEmitter<boolean>();
 
   username: string = '';
   password: string = '';
+
+  constructor(
+    private authService: AuthService,
+    private router: Router
+  ) {}
+  
 
   login() {
     const credentials = {
@@ -22,11 +27,9 @@ export class LoginFormComponent {
     }
     this.authService.login(credentials).subscribe(() => this.router.navigateByUrl('/'))
   }
+
   switchToSignup(): void {
     this.goToSignup.emit(true);
   }
 
-  // authMe() {
-  //   this.authService.authMe().subscribe((res) => console.log(res));
-  // }
 }

@@ -1,8 +1,5 @@
 import { AuthService } from './../../../../core/services/auth/auth.service';
 import { Component, Output, EventEmitter } from '@angular/core';
-import { MatchingFieldsValidatorDirective } from 'src/app/shared/directives/matching-fields.directive';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,12 +8,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup-form.component.scss']
 })
 export class SignupFormComponent {
+  
   @Output() goToLogin = new EventEmitter<boolean>();
+  
   user: string = '';
   password: string = '';
   passwordRepeat: string = '';
 
-  constructor (private authService: AuthService, private router: Router) {}
+  constructor (
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   switchToLogin(): void {
     this.goToLogin.emit(true);
